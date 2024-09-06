@@ -18,34 +18,30 @@ def allowed_file(filename):
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
-        print("Received POST request")  # Debug print
+        print("Received POST request")  
         if 'file' not in request.files:
-            print("No file part")  # Debug print
+            print("No file part")  
             return jsonify({"error": "No file part"}), 400
         file = request.files['file']
         if file.filename == '':
-            print("No selected file")  # Debug print
+            print("No selected file")  
             return jsonify({"error": "No selected file"}), 400
         if file and allowed_file(file.filename):
-            print(f"Processing file: {file.filename}")  # Debug print
-            # Read the image file
+            print(f"Processing file: {file.filename}")  
             input_image = Image.open(file.stream)
             
-            # Remove the background
             output_image = remove(input_image)
             
-            # Save the result to a byte stream
             img_byte_arr = io.BytesIO()
             output_image.save(img_byte_arr, format='PNG')
             img_byte_arr.seek(0)
             
-            # Convert to base64 for easy transmission
             img_base64 = base64.b64encode(img_byte_arr.getvalue()).decode('utf-8')
             
-            print("Image processed successfully")  # Debug print
+            print("Image processed successfully")  
             return jsonify({"image": img_base64})
         else:
-            print("File not allowed")  # Debug print
+            print("File not allowed")  
             return jsonify({"error": "File not allowed"}), 400
     
     return render_template('upload.html')
