@@ -21,6 +21,19 @@ background-removal-app/
 ├── README.md                  # Project description (this file)
 └── .gitignore                 # Git ignore file
 ```
+## Project Screenshots
+
+1. **Start**
+   ![alt text](https://github.com/vauzher/background-removal-app/blob/main/screenshots/Screenshot%202024-09-11%20at%2012.20.05.png?raw=true)
+   
+2. **Uploading a Photo**
+   ![alt text](https://github.com/vauzher/background-removal-app/blob/main/screenshots/Screenshot%202024-09-11%20at%2012.20.29.png?raw=true)
+
+3. **In Process**
+   ![alt text](https://github.com/vauzher/background-removal-app/blob/main/screenshots/Screenshot%202024-09-11%20at%2012.20.36.png?raw=true)
+   
+5. **Removed Background**
+   ![alt text](https://github.com/vauzher/background-removal-app/blob/main/screenshots/Screenshot%202024-09-11%20at%2012.20.54.png?raw=true)
 
 ## Installation
 
